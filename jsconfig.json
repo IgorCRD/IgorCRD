@@ -1,0 +1,23 @@
+{
+    "jsx": "react",
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES6",
+      "baseUrl": ".",
+      "paths": {
+        "src/*": ["./src/*"]
+      },
+      "rootDirs": ["src"]
+    },
+    "path-intellisense.mappings": {
+      "src/*": "${workspaceRoot}/src/*"
+    },
+    "exclude": [
+      "node_modules",
+      "build",
+      ".github",
+      ".vscode",
+      "**/node_modules/*"
+    ]
+  }
+  

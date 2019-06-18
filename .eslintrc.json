@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "jest": true,
+    "browser": true
+  },
+  "globals": {
+    "document": false,
+    "navigator": false,
+    "window": false
+  },
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react/jsx-filename-extension": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./"]
+      }
+    }
+  }
+}
