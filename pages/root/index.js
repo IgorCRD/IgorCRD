@@ -1,11 +1,13 @@
+// @flow
+
 import React from "react";
 import { Router, Link } from "@reach/router";
 
 const Home = () => <div>Home</div>;
 
-const Dashboard = () => (
+const Dashboard = ({ bla = "" }: { bla?: string }) => (
   <div>
-    Dashboard
+    {`Dashboard ${bla}`}
     <img src="/static/img/evento.png" alt="teste" />
   </div>
 );
@@ -15,11 +17,12 @@ const RootRouter = () => {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard/abc">Dashboard</Link>
+        <Link to="/dashboard/def">Dashboard</Link>
       </nav>
       <Router>
         <Home path="/" />
-        <Dashboard path="/dashboard" />
+        <Dashboard path="/dashboard/:bla" />
       </Router>
     </div>
   );

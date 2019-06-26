@@ -1,6 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
-import { ServerLocation } from "@reach/router";
+import { ServerLocation, LocationProvider } from "@reach/router";
 
 class RootApp extends App {
   static async getInitialProps({ ctx: { req } }) {
@@ -22,7 +22,9 @@ class RootApp extends App {
 
     return (
       <Container>
-        <Component />
+        <LocationProvider>
+          <Component />
+        </LocationProvider>
       </Container>
     );
   }

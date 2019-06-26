@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/.*
+.*/dist/.*
+.*/flow-typed/.*
+
+[include]
+
+[libs]
+flow-typed
+
+[options]
+
+[lints]
+deprecated-utility=off

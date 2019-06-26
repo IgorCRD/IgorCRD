@@ -11,10 +11,17 @@
     "window": false
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "plugin:prettier/recommended"],
-  "plugins": ["react-hooks"],
+  "extends": [
+    "plugin:flowtype/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["flowtype", "react-hooks"],
   "rules": {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/require-default-props": "off",
+    "flowtype/generic-spacing": "off"
   },
   "settings": {
     "import/resolver": {
