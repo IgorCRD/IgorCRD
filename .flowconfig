@@ -1,6 +1,8 @@
 [ignore]
 .*/node_modules/.*
 .*/dist/.*
+.*/.next/.*
+.*/.vscode/.*
 .*/flow-typed/.*
 
 [include]
@@ -9,6 +11,7 @@
 flow-typed
 
 [options]
+all=true
 
 [lints]
 deprecated-utility=off

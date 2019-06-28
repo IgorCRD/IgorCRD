@@ -31,7 +31,8 @@
     "start": "NODE_ENV=production node server.js",
     "build": "next build",
     "dev": "NODE_ENV=development node server.js",
-    "debug": "next --inspect"
+    "debug": "next --inspect",
+    "flow-typed": "flow-typed install"
   },
   "eslintIgnore": [
     "flow-typed/*"

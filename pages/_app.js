@@ -3,7 +3,7 @@ import App, { Container } from "next/app";
 import { ServerLocation, LocationProvider } from "@reach/router";
 
 class RootApp extends App {
-  static async getInitialProps({ ctx: { req } }) {
+  static async getInitialProps({ ctx: { req } }: any) {
     return { url: req.url };
   }
 

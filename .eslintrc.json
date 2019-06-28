@@ -21,7 +21,8 @@
   "rules": {
     "react/jsx-filename-extension": "off",
     "react/require-default-props": "off",
-    "flowtype/generic-spacing": "off"
+    "flowtype/generic-spacing": "off",
+    "flowtype/no-types-missing-file-annotation": "off"
   },
   "settings": {
     "import/resolver": {
