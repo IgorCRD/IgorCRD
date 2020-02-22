@@ -1,29 +1,42 @@
 import React from "react";
-import { Router, Link } from "@reach/router";
+import dynamic from "next/dynamic";
+import { Link, Switch, Route } from "react-router-dom";
+import Router from "src/App/Router";
 
-const Home = () => <div>Home</div>;
+const Home = dynamic(() => import("src/Pages/Home"));
+const Dashboard = dynamic(() => import("src/Pages/Dashboard"));
 
-const Dashboard = ({ bla = "" }: { bla?: string }) => (
-  <div>
-    {`Dashboard ${bla}`}
-    <img src="/static/img/evento.png" alt="teste" />
-  </div>
-);
+class RootRouter extends React.Component {
+  static async getInitialProps(context) {
+    // calls page's `getInitialProps` and fills `appProps.pageProps`
+    const { req } = context;
 
-const RootRouter = () => {
-  return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/dashboard/abc">Dashboard</Link>
-        <Link to="/dashboard/def">Dashboard</Link>
-      </nav>
-      <Router>
-        <Home path="/" />
-        <Dashboard path="/dashboard/:bla" />
+    return { url: req.url };
+  }
+
+  render() {
+    const { url } = this.props;
+
+    return (
+      <Router location={url}>
+        <div>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/dashboard/abc">Dashboard</Link>
+            <Link to="/dashboard/def">Dashboard</Link>
+          </nav>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/dashboard/:bla">
+              <Dashboard />
+            </Route>
+          </Switch>
+        </div>
       </Router>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default RootRouter;
