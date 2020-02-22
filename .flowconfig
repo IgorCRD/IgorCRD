@@ -11,6 +11,7 @@
 flow-typed
 
 [options]
+module.name_mapper='^src' ->'<PROJECT_ROOT>/src'
 all=true
 
 [lints]

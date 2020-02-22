@@ -15,7 +15,9 @@
   "plugins": ["flowtype", "react-hooks"],
   "rules": {
     "react/jsx-filename-extension": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "no-nested-ternary": "off",
+    "global-require": "off"
   },
   "settings": {
     "import/resolver": {

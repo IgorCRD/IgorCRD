@@ -10,9 +10,15 @@ app.prepare().then(() => {
 
   server.use(compression());
 
-  server.get("*", (req, res: any) => app.render(req, res, "/root", req.query));
+  const isStaticAssetsRegex = new RegExp(/^\/_next\/static\//);
+  server.get(isStaticAssetsRegex, (_, res, nextHandler) => {
+    res.setHeader("Cache-Control", "public,max-age=31536000,immutable");
+    nextHandler();
+  });
 
-  server.listen(3000, (err: any) => {
+  server.get("*", (req, res) => app.render(req, res, "/root", req.query));
+
+  server.listen(3000, err => {
     if (err) throw err;
     // eslint-disable-next-line no-console
     console.log("> Ready on http://localhost:3000");
