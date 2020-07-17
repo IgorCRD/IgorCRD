@@ -25,7 +25,7 @@
     "extract-css-chunks-webpack-plugin": "^4.7.4",
     "flow-bin": "0.118.0",
     "flow-typed": "3.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "next-compose-plugins": "^2.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.18.2"
